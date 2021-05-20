@@ -1,0 +1,132 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+main {
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.title{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  text-align: center;
+}
+
+
+.chat {
+  width: 95%;
+  margin-left: 2%;
+  margin-bottom: 4%;
+  min-height: 80vh;
+  max-height: 80vh;
+  overflow: scroll;
+  border: 2px solid black;
+}
+
+.rightBox {
+  float: right;
+  margin: 0.5%;
+  width: 24%;
+  min-height: 97vh;
+  max-height: 97vh;
+  border: 2px solid black;
+
+}
+
+.leftBox {
+  float: left;
+  width: 72%;
+  margin: 0.5%;
+  min-height: 97vh;
+  max-height: 97vh;
+  border: 2px solid black;
+
+}
+.map {
+  float: top;
+  margin: 0.5%;
+  width: 98%;
+  min-height: 60vh;
+  max-height: 60vh;
+  border: 2px solid black;
+
+}
+
+.flightsList {
+  float: bottom;
+  margin: 0.5%;
+  margin-top: 1%;
+  width: 98%;
+  min-height: 28vh;
+  max-height: 28vh;
+  border: 2px solid black;
+
+}
+
+
+.card-container {
+ 
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  background-color: #99dbee;
+}
+
+.card {
+  background-color: #f1f1f1;
+  flex: 0 0 auto;
+  margin: 10px;
+  padding: 20px;
+  width: 25%;
+  height: 90%;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0,0,0,0.2);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner{
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #FFF;
+
+}
+
+.popup-inner .close-btn{
+  position: absolute;
+  top: 16%;
+  right: 16px;
+
+}
+
+.passenger {
+  background-color: aliceblue;
+  margin: 0.5%;
+
+}
+
+.passenger-list{
+  width: 95%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 2px solid black;
+
+}
