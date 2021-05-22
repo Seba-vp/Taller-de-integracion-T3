@@ -10,21 +10,19 @@ const Flights = () => {
 
     const [flightsList, setFlights] = useState([]);
     const [planesPositions, setPlanesPositions] = useState([]);
-    //const [mapData, setMapData] = useState([]);
 
     const [buttonPopup, setButtonPoup] = useState(false);
     const [currentPlane, setCurrentPlane] = useState([]);
 
-    var mapData = [[],[]]
 
  
     // FLIGHTS LIST
     useEffect(() => {
+        //const interval = setInterval(() => {
 
             socket.emit('FLIGHTS');
             socket.on('FLIGHTS', flightsListUpdated => {
                 setFlights(flightsListUpdated);
-                mapData[0]=flightsListUpdated
             });
             
             socket.on('POSITION', plane => {
@@ -35,19 +33,18 @@ const Flights = () => {
                     
                     planes2[planes2.indexOf(similar_plane)] = plane;
                     setPlanesPositions(planes2);
-                    mapData[1] = planes2
     
                 }else {
                     setPlanesPositions([...planesPositions, plane]);
-                    mapData[1] = [...planesPositions, plane]
                     }          
             });
-
-            return () => {socket.off()}
+        //}, 1000);
+            
+        return () => {socket.off()}
     }, [flightsList, planesPositions]);
 
-    console.log("DESDE FLIGHT")
-    console.log(flightsList)
+    //console.log("DESDE FLIGHT")
+    //console.log(flightsList)
 
 
     return (
@@ -80,13 +77,13 @@ const Flights = () => {
                     
                     {flightsList.map((e,i)=> 
                     <div key={i} className="card">
-                        <div>{e.code}</div>
-                        <div>{e.airline}</div>
-                        <div>{e.origin}</div> 
-                        <div>{e.destination}</div> 
-                        <div>{e.plane}</div>
-                        <div>{e.seats}</div>
-                        <button onClick={()=> {setButtonPoup(true); setCurrentPlane(e.passengers)}}>Ver pasajeros</button>
+                        <div><h3>Codigo: {e.code}</h3></div>
+                        <div><p>Aerolinea: {e.airline}</p></div>
+                        <div><p>Origen: {e.origin}</p></div> 
+                        <div><p>Destino: {e.destination}</p></div> 
+                        <div><p>Avión: {e.plane}</p></div>
+                        <div><p>Asientos: {e.seats}        <button onClick={()=> {setButtonPoup(true); setCurrentPlane(e.passengers)}}>Ver pasajeros</button></p></div>
+                      
 
                     </div>
                     

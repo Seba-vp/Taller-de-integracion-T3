@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import L from 'leaflet';
 import '../App.css';
@@ -36,7 +36,7 @@ const MapView = ({positions, flights})=> {
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     />
     {positions.map((p)=>
-        <Marker position={p.position} icon={planeIcon}>
+        <Marker position={p.position} icon={planeIcon} >
             <Popup>
                 Vuelo {p.code}.
             </Popup>
@@ -48,7 +48,7 @@ const MapView = ({positions, flights})=> {
     
     flights.map((f) =>
         <>
-            <Marker position={f.origin}>
+            <Marker position={f.origin} >
                 <Popup>
                     Origen {f.origin}.
                 </Popup>

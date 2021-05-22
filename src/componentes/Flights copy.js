@@ -26,7 +26,7 @@ const Flights = () => {
                 setFlights(flightsListUpdated);
             });    
     }, 1000);
-        return () => {socket.off()}
+        //return () => {socket.off()}
         //return () => clearInterval(interval);
     }, [flightsList]);
 

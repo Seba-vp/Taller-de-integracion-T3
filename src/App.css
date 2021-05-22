@@ -11,7 +11,9 @@ main {
   flex-direction: row;
   text-align: center;
   min-height: 100vh;
+  background-color: aliceblue;
 }
+
 
 .title{
   margin-top: 1%;
@@ -27,26 +29,37 @@ main {
   min-height: 80vh;
   max-height: 80vh;
   overflow-y: scroll;
-  border: 2px solid black;
+  border: 2px solid #aaaaaa;
+  border-radius: 5px;
 }
 
 .rightBox {
   float: right;
-  margin: 0.5%;
-  width: 24%;
-  min-height: 97vh;
-  max-height: 97vh;
-  border: 2px solid black;
+  padding: 0.5%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  margin-right: 0.5%;
+  width: 26%;
+  min-height: 98vh;
+  max-height: 98h;
+  border: 2px solid #aaaaaa;
+  background-color: #FFF;
+  border-radius: 5px;
 
 }
 
 .leftBox {
   float: left;
   width: 72%;
-  margin: 0.5%;
-  min-height: 97vh;
-  max-height: 97vh;
-  border: 2px solid black;
+  padding: 0.5%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  margin-left: 0.5%;
+  min-height: 98vh;
+  max-height: 98vh;
+  border: 2px solid #aaaaaa;
+  background-color: #FFF;
+  border-radius: 5px;
 
 }
 .map-container {
@@ -55,7 +68,8 @@ main {
   width: 98%;
   min-height: 60vh;
   max-height: 60vh;
-  border: 2px solid black;
+  border: 2px solid #aaaaaa;
+  border-radius: 5px;
 
 }
 
@@ -64,9 +78,9 @@ main {
   margin: 0.5%;
   margin-top: 1%;
   width: 98%;
-  min-height: 28vh;
-  max-height: 28vh;
-  border: 2px solid black;
+  max-height: 60%;
+  border: 2px solid #aaaaaa;
+  border-radius: 5px;
 
 }
 
@@ -75,18 +89,77 @@ main {
  
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  background-color: #99dbee;
+  overflow-x: scroll;
+  background-color: #FFF;
+  max-height: 60%;
+
+
+  margin: 0;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 0%;
+  padding: 0;
+
 }
 
 .card {
-  background-color: #f1f1f1;
+
+  background-color: #f4f9f9;
   flex: 0 0 auto;
-  margin: 10px;
-  padding: 20px;
+  margin: 1%;
+  padding: 1%;
   width: 25%;
   height: 90%;
+  border-radius: 5px;
+  border: 1px solid #ccf2f4;
+  text-align: left;
+  font-size: 90%;
 }
+
+.icl{
+
+}
+
+.icr{
+
+}
+
+
+.passenger {
+  background-color: aliceblue;
+  margin: 0.5%;
+  
+
+}
+
+.passenger-list{
+  position: relative;
+  width: 95%;
+  overflow-y: scroll;
+  border: 2px solid #aaaaaa;
+  max-height: 80%;
+
+}
+
+
+.login{
+  vertical-align: middle;
+  align-items: center;
+  width: 100%;
+  margin-top: 50%;
+  text-align: center;
+  align-content: center;
+  
+}
+
+#mapid { 
+  height: 180px; 
+}
+
+.leaflet-container{
+  height: 59vh;
+}
+
 
 .popup {
   position: fixed;
@@ -102,11 +175,15 @@ main {
 }
 
 .popup-inner{
-  position: relative;
+  position: fixed;
+  left: 25%;
+  top: 72%;
   padding: 32px;
   width: 100%;
-  max-width: 640px;
+  max-width: 25%;
+  max-height: 25%;
   background-color: #FFF;
+  float: right;
 
 }
 
@@ -117,30 +194,132 @@ main {
 
 }
 
-.passenger {
-  background-color: aliceblue;
-  margin: 0.5%;
 
+/* burbujas de chaatt */
+.container{
+  border-color: #a4ebf3;
+  background-color: #ccf2f4;
+  
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 1px;
+  margin-left: 1%;
+  margin-right: 10%;
 }
 
-.passenger-list{
-  width: 95%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  border: 2px solid black;
+/* Darker chat container */
+.darker {
+  border: 2px solid #ccf2f4;
+  background-color: #f4f9f9;
+  margin-left: 10%;
+  margin-right: 1%;
+}
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.container img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
 
+/* Style the right image */
+.container img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-right {
+  float: right;
+  color: #aaa;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
 }
 
 
-.login{
-  vertical-align: middle;
-  align-items: center;
+.chatInput{
+  width: 70%;
+  float: left;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  margin-left: 2%;
+  padding: 17px 20px 12px 40px;
 }
 
-#mapid { 
-  height: 180px; 
+.button {
+  padding: 15px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: #a4ebf3;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+  float: right;
+  margin-right: 2%;
 }
 
-.leaflet-container{
-  height: 59vh;
+.button:hover {background-color: #ccf2f4}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
+
+
+.input{
+  width: 70%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  margin-left: 2%;
+  padding: 17px 20px 12px 40px;
+}
+
+.inputButton {
+  padding: 15px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: #a4ebf3;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+  margin-right: 2%;
+}
+
+.inputButton:hover {background-color: #ccf2f4}
+
+.inputButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+

@@ -20,8 +20,6 @@ function App() {
     }
   
   }
-
-  socket.emit('conectado', "Hola hola");
   return (
     <main>
       <div className="App">
@@ -33,12 +31,18 @@ function App() {
         <div className='rightBox'>
           {
             !registrado &&
+
+            <div className="login">
             <form onSubmit={registrar}>
               <label htmlFor=""></label>
-              <h3>Nickname:</h3>
-              <input value = {name} onChange = {e => setName(e.target.value)}/>
-              <button>Chatear</button>
+              <h1>Nickname:</h1>
+              <br/>
+              <input value = {name} onChange = {e => setName(e.target.value)}  className="input"/>
+              <br/>
+              <br/>
+              <button className="inputButton">Chatear</button>
             </form>
+            </div>
           }
           {
             registrado &&
