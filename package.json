@@ -1,4 +1,4 @@
-{
+{ "homepage": "http://Seba-vp.github.io/Taller-de-integracion-T3",
   "name": "flight-app",
   "version": "0.1.0",
   "private": true,
@@ -22,6 +22,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
